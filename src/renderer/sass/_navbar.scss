@@ -1,0 +1,154 @@
+.nav {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(#475757, 0.9);
+  height: $menu-size;
+  width: $menu-size;
+  z-index: 10;
+  overflow: hidden;
+  transition-duration: 0.4s;
+}
+
+.nav.open {
+  background-color: rgba(#475757, 0.9);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 5px;
+  display: flex;
+}
+
+.nav__list {
+  display: none;
+}
+
+.nav__list.show {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  list-style: none;
+  margin: 0;
+  padding: 30px 60px;
+  width: 100%;
+}
+
+.nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  width: 100%;
+  opacity: 0;
+  animation-name: fadein;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  label {
+    color: #eee;
+    margin-bottom: 8px;
+  }
+
+  .minicolors-position-bottom .minicolors-panel {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.nav__item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.nav__item:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.nav__item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.nav__item:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+.nav__link {
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: #fff;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(#475757, 0.9);
+  height: $menu-size;
+  width: $menu-size;
+  z-index: 20;
+  box-shadow: 0px 3px 8px #333;
+  cursor: pointer;
+}
+
+.menu__line {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 13px;
+  transition-duration: 0.4s;
+}
+
+.menu__line:nth-child(1) {
+  top: $menu-size / 4;
+}
+
+.menu__line:nth-child(2) {
+  top: $menu-size / 2;
+  transform: translate(-50%, -50%);
+}
+
+.menu__line:nth-child(3) {
+  bottom: $menu-size / 4;
+}
+
+.menu.active {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+
+.menu.active .menu__line:nth-child(1) {
+  transform: translate(-12px, 7px) rotate(-45deg);
+}
+
+.menu.active .menu__line:nth-child(2) {
+  transition-duration: 0s;
+  opacity: 0;
+}
+
+.menu.active .menu__line:nth-child(3) {
+  transform: translate(-12px, -7px) rotate(45deg);
+}

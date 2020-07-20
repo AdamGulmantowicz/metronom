@@ -1,0 +1,57 @@
+.metronom {
+  width: 100%;
+  flex-grow: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+
+  &__item {
+    font-size: 50px;
+    flex: 1 0 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+    &:nth-child(odd) {
+      color: var(--oddColor);
+    }
+
+    &:nth-child(even) {
+      color: var(--evenColor);
+    }
+
+    &.active {
+      background: $color-grey-1;
+      text-shadow: 0 0 6px white;
+      -webkit-text-stroke: 2px white;
+    }
+  }
+
+  &__dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+    color: darkorange;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+      stroke: orange;
+      stroke-width: 1px;
+    }
+
+    &.active {
+      svg {
+        fill: yellow;
+        filter: drop-shadow(0 0 6px yellow);
+      }
+    }
+  }
+}
