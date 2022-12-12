@@ -10,7 +10,7 @@
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
   "dependencies": {
-    "@claviska/jquery-minicolors": "^2.3.5",
+    "@claviska/jquery-minicolors": "^2.3.6",
     "jquery": "^3.5.1",
     "knockout": "^3.5.1",
     "node-sass": "^4.14.1",
